@@ -14,7 +14,8 @@ function LoginPage() {
       <Body>
         <FormLogin>
           <Title>Войти</Title>
-             
+              
+          
             <InputEntrance type ="text" placeholder="Введите логин" {...register("example")}/>
              
             <InputEntrance type="password" placeholder="Введите пароль" {...register("exampleRequired")} />
