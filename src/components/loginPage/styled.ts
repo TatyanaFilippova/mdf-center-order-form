@@ -62,3 +62,19 @@ export const ButtonReset = styled.button`
   font-weight: bold;
 
 `
+
+export const ButtonСreate = styled.button`
+  background-color: white;
+  font-size: 20px;
+  color:  #025A6A;
+  text-align: center;
+  height: 64px;
+  margin-top: 64px;
+  font-weight: bold;
+`
+
+export const WrapperButtonCreate = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`
