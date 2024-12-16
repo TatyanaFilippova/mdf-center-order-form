@@ -46,7 +46,7 @@ export const ButtonEntrance = styled.button`
   font-size: 20px;
   color: white;
   text-align: center;
-  width: 230px;
+  width: 350px;
   height: 64px;
   margin-top: 64px;
   border-radius: 8px;
@@ -55,11 +55,12 @@ export const ButtonReset = styled.button`
   background-color: white;
   font-size: 20px;
   color:  #025A6A;
-  text-align: center;
+  text-align: end;
   width: 230px;
   height: 64px;
   margin-top: 64px;
   font-weight: bold;
+  padding-right: 20px ;
 
 `
 
