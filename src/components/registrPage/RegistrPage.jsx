@@ -1,9 +1,9 @@
 
 import InputEntrance from "../inputEntrance/InputEntrance";
 import { Wrapper ,Body,BodyBlue,ButtonEntrance,ButtonReset,FormLogin,Title,WrapperButton,ButtonСreate,WrapperButtonCreate} from "./styled";
-import { useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
-function LoginPage() {
+function RegistrPage() {
   const {register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
     console.log("aaa", data);
@@ -35,7 +35,7 @@ console.log(errors.example)
             <ButtonReset>Сбросить пароль</ButtonReset>
           </WrapperButton>
           <WrapperButtonCreate>
-            <ButtonСreate onClick={}>Создать нового пользователя</ButtonСreate>
+            <ButtonСreate>Создать нового пользователя</ButtonСreate>
           </WrapperButtonCreate>
         </FormLogin>
         
@@ -45,4 +45,4 @@ console.log(errors.example)
   ); 
 } 
  
-export default LoginPage 
+export default RegistrPage
