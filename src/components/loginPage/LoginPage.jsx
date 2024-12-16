@@ -61,7 +61,7 @@ function LoginPage() {
             <ButtonReset>Сбросить пароль</ButtonReset>
           </WrapperButton>
           <WrapperButtonCreate>
-            <ButtonСreate>Создать нового пользователя</ButtonСreate>
+            <ButtonСreate onClick={ ()=>router.push('/registr')}>Создать нового пользователя</ButtonСreate>
           </WrapperButtonCreate>
         </FormLogin>
         
