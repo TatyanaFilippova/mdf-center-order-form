@@ -2,17 +2,43 @@
 import InputEntrance from "../inputEntrance/InputEntrance";
 import { Wrapper ,Body,BodyBlue,ButtonEntrance,ButtonReset,FormLogin,Title,WrapperButton,ButtonСreate,WrapperButtonCreate} from "./styled";
 import { useForm} from "react-hook-form";
+import axiosInstance from '../../api/axiosInstanse'
+import { useRouter } from 'next/navigation'
+
 
 function LoginPage() {
-  const {register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => {
-    console.log("aaa", data);
+  const router = useRouter()
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    defaultValues: {
+      email: "tatiana.filippova.98@mail.ru"
+    }})
+  const onSubmit = async (data) => {
+    try {
+      const result = await axiosInstance({
+        method: "post",
+        url: "/auth/local",
+        data: JSON.stringify({
+          "identifier": data.email,
+          "password": data.password,
+        }),
+      
+        
+      })
+      router.push('/')
+      console.log(result)
+    }
+    catch(e) {
+      console.log(e)
+      alert("ошибка")
+    }
   }
-console.log(errors.example)
+
+
   return (
     <Wrapper>
       <Body>
-        <FormLogin>
+        <FormLogin >
+          
           <Title>Войти</Title>
           <InputEntrance
             type="text"
