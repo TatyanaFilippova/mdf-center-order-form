@@ -1,17 +1,26 @@
 
 import InputEntrance from "../inputEntrance/InputEntrance";
-import { Wrapper ,Body,BodyBlue,ButtonEntrance,ButtonReset,FormLogin,Title,WrapperButton,ButtonСreate,WrapperButtonCreate} from "./styled";
+import { Wrapper ,Body,BodyBlue,ButtonEntrance,ButtonReset,FormLogin,Title,WrapperButton} from "./styled";
 import { useForm } from "react-hook-form";
-import axiosInstance from '..//../api/axiosInstanse'
+import axiosInstance from '../../api/axiosInstanse'
 import { useRouter } from 'next/navigation'
+
+
+interface Inputs {
+  email: string,
+  password: string,
+  username: string,
+  passwordRepeat: string,
+}
+
 
 function RegistrPage() {
   const router = useRouter()
-  const { register, handleSubmit, formState: { errors }, watch } = useForm({
+  const { register, handleSubmit, formState: { errors }, watch } = useForm<Inputs>({
     defaultValues: {
       email: "1234s5@mail.ru"
     }})
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: Inputs) => {
     try {
       const result = await axiosInstance({
         method: "post",

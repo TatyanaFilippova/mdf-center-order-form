@@ -6,13 +6,21 @@ import axiosInstance from '../../api/axiosInstanse'
 import { useRouter } from 'next/navigation'
 
 
+
+interface Inputs {
+  email: string,
+  password: string,
+}
+
+
+
 function LoginPage() {
   const router = useRouter()
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
     defaultValues: {
       email: "tatiana.filippova.98@mail.ru"
     }})
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: Inputs) => {
     try {
       const result = await axiosInstance({
         method: "post",
