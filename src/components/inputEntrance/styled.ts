@@ -1,6 +1,10 @@
 import styled, { css } from "styled-components";
 
-export const Input = styled.input`
+interface InputProps {
+  $isErrors?: boolean
+}
+
+export const Input = styled.input<InputProps>`
   border-bottom: 2px solid #E5D8D8;
   width: 100%;
   font-size: 24px;
