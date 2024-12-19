@@ -51,7 +51,7 @@ function RegistrPage() {
             type="text"
             placeholder="Введите email"
             {...register("email", { pattern: /(.+)@(.+){2,}\.(.+){2,}/, required: true })}
-            isErrors={errors.email}
+            isErrors={!!errors.email}
           />
           {errors.email?.type ==='pattern' && <p>Введите корректный email</p> }
           {errors.email?.type === 'required' && <p>Поле обязательно для ввода</p>}
@@ -59,7 +59,7 @@ function RegistrPage() {
             type="text"
             placeholder="Введите имя"
             {...register("username", { pattern: /[А-Яа-яA-Za-zё]/, required: true })}
-            isErrors={errors.username}
+            isErrors={!!errors.username}
           />
           {errors.username?.type ==='pattern' && <p>Введите корректное имя</p> }
           {errors.username?.type === 'required' && <p>Поле обязательно для ввода</p>}
@@ -67,7 +67,7 @@ function RegistrPage() {
             type="password"
             placeholder="Введите пароль"
             {...register("password", { required: true, minLength: 8 })}
-            isErrors={errors.password}
+            isErrors={!!errors.password}
           />
           {errors.password?.type === 'required' && <p>Поле обязательно для ввода</p>}
           {errors.password?.type && <p>Пароль должен содержать от 8 символов</p>}
@@ -85,7 +85,7 @@ function RegistrPage() {
                 }
               }
              })}
-            isErrors={errors.passwordRepeat}
+            isErrors={!!errors.passwordRepeat}
           />
           {errors.passwordRepeat?.type === 'required' && <p>Поле обязательно для ввода</p>}
           {errors.passwordRepeat?.type === 'validate' && <p>Пароли не совпадают</p>}
