@@ -21,7 +21,6 @@ const Sidebar = () => {
         </Wrapper>
         <SidebarItem icon={Settings.src} text="Настройки" />
       </SidebarStyled>
-      ;
     </>
   );
 };
