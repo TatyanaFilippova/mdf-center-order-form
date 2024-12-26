@@ -8,7 +8,7 @@ interface TableProps {
 }
 
 const Table = ({ list }: TableProps) => {
-  console.log(list);
+  
   return (
     <>
       <HeaderTable />

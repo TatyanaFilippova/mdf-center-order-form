@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SidebarStyled = styled.div`
   background: #025a6a;
   height: 100vh;
-  width: 206px;
+  width: 218px;
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
