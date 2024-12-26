@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
- 
+
   width: 100%;
   height: 48px;
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
   padding-left: 8px;
-  padding-right: 8px;
+
   &:hover {
     background-color: #f7f7f7;
   }
@@ -54,6 +54,7 @@ export const ShellDateStart = styled.div`
 export const ShellStatus = styled.div`
   width: 10%;
   font-size: 12px;
+  text-align: end;
 `;
 
 export const ImgStatus = styled.img`
