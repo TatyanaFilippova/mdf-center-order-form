@@ -7,6 +7,7 @@ export const HeaderStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
 `;
 
 export const Img = styled.img`
@@ -17,12 +18,14 @@ export const Img = styled.img`
 
 export const Title = styled.div`
   font-size: 16px;
+  padding-left: 24px;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 24px;
 `;
 
 export const Name = styled.div`
@@ -42,6 +45,9 @@ export const HeaderBottom = styled.div`
   font-size: 11px;
   color: #3a3a3a;
   align-items: center;
+  margin-bottom: 94px;
+  background-color: white;
+  padding-left: 24px;
 `;
 
 export const BreadCrumbsItem = styled.div`

@@ -13,7 +13,7 @@ import {
 import menu from "./assets/Menu Vertical.svg";
 import Status from "./status/Status";
 
-interface TableElementItemProps {
+export interface TableElementItemProps {
   number: string;
   title: string;
   sizes: string;
@@ -50,8 +50,8 @@ const TableElementItem = ({
       <ShellDateEnd>{dateEnd}</ShellDateEnd>
       <ShellStatus>
         <Status $status={status} />
+        <ImgStatus src={menu.src} />
       </ShellStatus>
-      <ImgStatus src={menu.src} />
     </Wrapper>
   );
 };

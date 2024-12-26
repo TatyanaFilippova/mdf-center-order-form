@@ -13,14 +13,13 @@ import notifications from "./assets/Notifications.svg";
 import HeaderItem from "./HeaderItem";
 import vector from "./assets/Vector.svg";
 
-
 interface HeaderProps {
   breadCrumbs: {
     title: string;
-  }[]
+  }[];
 }
 
-const Header = ({breadCrumbs}: HeaderProps) => {
+const Header = ({ breadCrumbs }: HeaderProps) => {
   return (
     <>
       <HeaderStyled>
@@ -37,7 +36,7 @@ const Header = ({breadCrumbs}: HeaderProps) => {
         {breadCrumbs.map((item, key) => {
           return (
             <BreadCrumbsItem key={item.title}>
-              {key > 0 && "  / "}
+              {key > 0 && " / "}
               {item.title}
             </BreadCrumbsItem>
           );
