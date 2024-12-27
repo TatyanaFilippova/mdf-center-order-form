@@ -1,11 +1,12 @@
 "use client";
 
 import Header from "@/components/header/Header";
-
 import Sidebar from "@/components/sidebar/Sidebar";
 import Table from "@/components/table/Table";
 import { TableElementItemProps } from "@/components/tableElement/TableElementItem";
 import { Container, Shell, Wrapper } from "./styled";
+import { useEffect, useState } from "react";
+import axiosInstance from "@/api/axiosInstanse";
 
 const breadCrumbs = [
   {
@@ -16,21 +17,43 @@ const breadCrumbs = [
   },
 ];
 
-const list: TableElementItemProps[] = [
-  {
-    number: "1",
-    title: "Фасад прямой, ручка “U“",
-    sizes: "50x120x24 (24)",
-    radius: "16 мм.",
-    colorType: "Пленка ПВХ",
-    color: "бирюзовый",
-    dateStart: "24.02.24",
-    dateEnd: "24.03.24",
-    status: "todo",
-  },
-];
-
 const Page = () => {
+  const [orders, setOrders] = useState<TableElementItemProps[]>([]);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const result = await axiosInstance({
+          method: "get",
+          url: "/orders",
+        });
+        console.log(result);
+        const orders = result.data.data.map((item: any, key: any) => {
+          return {
+            number: key + 1,
+            title: item.name,
+            sizes: `${item.height} ${item.width} ${item.thickness}`,
+            radius: item.radius,
+            colorType: item.coating,
+            color: item.color,
+            dateStart: item.dateStart,
+            dateEnd: item.dateEnd,
+            status:
+              item.orderStatus === "todo"
+                ? "todo"
+                : item.orderStatus === "in-progress"
+                  ? "inProgress"
+                  : item.orderStatus === "expired"
+                    ? "expired"
+                    : "ready",
+          };
+        });
+        setOrders(orders);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    getData();
+  }, []);
   return (
     <>
       <Wrapper>
@@ -38,7 +61,7 @@ const Page = () => {
         <Shell>
           <Header breadCrumbs={breadCrumbs} />
           <Container>
-            <Table list={list} />
+            <Table list={orders} />
           </Container>
         </Shell>
       </Wrapper>
