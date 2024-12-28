@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>;
 // Сам сторис, args - пропсы компонента
 export const WithHeader: Story = {
   args: {
+    title: "Cписок заказов",
     breadCrumbs: [
       {
         title: "Главная",
