@@ -13,6 +13,7 @@ const TableElement = () => {
         dateStart="24.02.24"
         dateEnd="24.03.24"
         status="todo"
+        count="24"
       />
     </>
   );

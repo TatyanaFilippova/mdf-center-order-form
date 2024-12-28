@@ -31,12 +31,13 @@ const Page = () => {
           return {
             number: key + 1,
             title: item.name,
-            sizes: `${item.height} ${item.width} ${item.thickness}`,
+            sizes: `${item.height}x${item.width}x${item.thickness}`,
             radius: item.radius,
             colorType: item.coating,
             color: item.color,
             dateStart: item.dateStart,
             dateEnd: item.dateEnd,
+            count: item.count,
             status:
               item.orderStatus === "todo"
                 ? "todo"
@@ -59,7 +60,7 @@ const Page = () => {
       <Wrapper>
         <Sidebar />
         <Shell>
-          <Header breadCrumbs={breadCrumbs} />
+          <Header title="Список заказов" breadCrumbs={breadCrumbs} />
           <Container>
             <Table list={orders} />
           </Container>

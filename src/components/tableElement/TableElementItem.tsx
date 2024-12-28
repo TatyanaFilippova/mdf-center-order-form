@@ -19,6 +19,7 @@ export interface TableElementItemProps {
   sizes: string;
   radius: string;
   colorType: string;
+  count: string;
   color: string;
   dateStart: string;
   dateEnd: string;
@@ -35,12 +36,13 @@ const TableElementItem = ({
   dateStart,
   dateEnd,
   status,
+  count,
 }: TableElementItemProps) => {
   return (
     <Wrapper>
       <ShellNumber>{number}</ShellNumber>
       <ShellTitle>{title}</ShellTitle>
-      <ShellSizes>{sizes}</ShellSizes>
+      <ShellSizes>{sizes} ({count})</ShellSizes>
       <ShellRadius>{radius}</ShellRadius>
       <ShellColorType>
         {colorType}, {color}

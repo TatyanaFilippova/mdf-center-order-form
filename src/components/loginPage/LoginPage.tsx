@@ -52,7 +52,7 @@ function LoginPage() {
             type="text"
             placeholder="Введите email"
             {...register("email", { pattern: /(.+)@(.+){2,}\.(.+){2,}/, required: true })}
-            isErrors={errors.email}
+            isErrors={!!errors.email}
           />
           {errors.email?.type ==='pattern' && <p>Введите корректный email</p> }
           {errors.email?.type === 'required' && <p>Поле обязательно для ввода</p>}
@@ -60,7 +60,7 @@ function LoginPage() {
             type="password"
             placeholder="Введите пароль"
             {...register("password", { required: true, minLength: 8 })}
-            isErrors={errors.password}
+            isErrors={!!errors.password}
           />
           {errors.password?.type === 'required' && <p>Поле обязательно для ввода</p>}
           {errors.password && <p>Пароль должен содержать от 8 символов</p>}

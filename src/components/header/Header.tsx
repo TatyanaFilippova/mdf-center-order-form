@@ -14,16 +14,17 @@ import HeaderItem from "./HeaderItem";
 import vector from "./assets/Vector.svg";
 
 interface HeaderProps {
+  title: string;
   breadCrumbs: {
     title: string;
   }[];
 }
 
-const Header = ({ breadCrumbs }: HeaderProps) => {
+const Header = ({ breadCrumbs, title }: HeaderProps) => {
   return (
     <>
       <HeaderStyled>
-        <Title>Список заказов</Title>
+        <Title>{title}</Title>
         <Wrapper>
           <HeaderItem icon={notifications.src} />
           <HeaderItem icon={localPost.src} />
