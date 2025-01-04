@@ -28,16 +28,7 @@ export const Wrapper = styled.div`
   padding-right: 24px;
 `;
 
-export const Name = styled.div`
-  font-size: 13px;
-  color: #3a3a3a;
-  margin-right: 12px;
-`;
 
-export const ImgVector = styled.img`
-  width: 8px;
-  height: 6px;
-`;
 
 export const HeaderBottom = styled.div`
   height: 40px;
