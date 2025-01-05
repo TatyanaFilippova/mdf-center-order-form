@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
   padding-left: 8px;
+  position: relative;
 
   &:hover {
     background-color: #f7f7f7;
@@ -60,4 +61,5 @@ export const ShellStatus = styled.div`
 export const ImgStatus = styled.img`
   width: 16px;
   height: 16px;
+  cursor: pointer;
 `;
