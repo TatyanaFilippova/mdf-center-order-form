@@ -5,14 +5,13 @@ interface InputProps {
 }
 
 export const Input = styled.input<InputProps>`
-  border-bottom: 2px solid #9d9a9a;
+  color: black;
   font-size: 16px;
   padding: 12px 8px 12px 8px;
-  color: black;
+  border-bottom: 2px solid #9d9a9a;
 
   &::placeholder {
     color: black;
-   
   }
 
   &:focus {
