@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 interface InputProps {
   $isErrors?: boolean;
- 
 }
 
 export const Input = styled.input<InputProps>`
@@ -26,6 +25,4 @@ export const Input = styled.input<InputProps>`
     css`
       border-color: #ff0000;
     `}
-
-  
 `;

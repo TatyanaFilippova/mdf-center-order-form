@@ -12,6 +12,8 @@ import {
 } from "./styled";
 import menu from "./assets/Menu Vertical.svg";
 import Status from "./status/Status";
+import { useState } from "react";
+import TableItemMenu from "../tableItemMenu/TableItemMenu";
 
 export interface TableElementItemProps {
   number: string;
@@ -38,11 +40,14 @@ const TableElementItem = ({
   status,
   count,
 }: TableElementItemProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Wrapper>
       <ShellNumber>{number}</ShellNumber>
       <ShellTitle>{title}</ShellTitle>
-      <ShellSizes>{sizes} ({count})</ShellSizes>
+      <ShellSizes>
+        {sizes} ({count})
+      </ShellSizes>
       <ShellRadius>{radius}</ShellRadius>
       <ShellColorType>
         {colorType}, {color}
@@ -52,8 +57,9 @@ const TableElementItem = ({
       <ShellDateEnd>{dateEnd}</ShellDateEnd>
       <ShellStatus>
         <Status $status={status} />
-        <ImgStatus src={menu.src} />
+        <ImgStatus src={menu.src} onClick={() => setIsOpen(!isOpen)} />
       </ShellStatus>
+      {isOpen && <TableItemMenu />}
     </Wrapper>
   );
 };
