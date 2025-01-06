@@ -7,8 +7,8 @@ interface InputProps {
 export const Input = styled.input<InputProps>`
   font-size: 16px;
   color: black;
-  border-bottom: 2px solid #9d9a9a;
   padding: 12px 8px 12px 8px;
+  border-bottom: 2px solid #9d9a9a;
 
   &::placeholder {
     color: black;
