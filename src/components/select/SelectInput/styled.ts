@@ -9,6 +9,8 @@ export const Input = styled.input<InputProps>`
   color: black;
   font-size: 16px;
   padding: 12px 8px 12px 8px;
+  cursor: pointer;
+ 
 
   &::placeholder {
     color: black;

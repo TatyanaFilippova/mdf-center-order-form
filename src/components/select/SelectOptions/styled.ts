@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   padding: 8px 12px 8px 12px;
   box-shadow: 0px 4px 4px 0px #00000040;
+  position: absolute;
+  margin-top: 60px;
+  background-color: white;
 `;
 
 export const Label = styled.div`
@@ -28,4 +31,3 @@ export const ImgIcon = styled.img`
   width: 24px;
   height: 24px;
 `;
-
