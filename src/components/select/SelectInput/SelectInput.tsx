@@ -14,8 +14,9 @@ interface TextInputProps {
 }
 
 const TextInput = ({
-  label,
+  
   message,
+  label,
   placeholder,
   isErrors,
   messageErrors,
