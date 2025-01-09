@@ -1,6 +1,8 @@
 import Label from "../../label/Label";
 import Message from "../../message/Message";
-import { Input } from "./styled";
+import { ImgIcon, Input, Wrapper } from "./styled";
+import icon from "../assets/Vector.svg";
+import { useState } from "react";
 
 interface TextInputProps {
   placeholder?: string;
@@ -8,6 +10,7 @@ interface TextInputProps {
   message?: string;
   isErrors?: boolean;
   messageErrors?: string;
+  isOpen?: boolean;
 }
 
 const TextInput = ({
@@ -17,10 +20,14 @@ const TextInput = ({
   isErrors,
   messageErrors,
 }: TextInputProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <Label text={label} />
-      <Input placeholder={placeholder} $isErrors={isErrors} />
+      <Wrapper onClick={() => setIsOpen(!isOpen)}>
+        <Input placeholder={placeholder} $isErrors={isErrors} />
+        <ImgIcon src={icon.src} $isOpen={isOpen} />
+      </Wrapper>
       <Message text={message} messageErrors={messageErrors} />
     </div>
   );

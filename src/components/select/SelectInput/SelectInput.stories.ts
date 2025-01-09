@@ -18,6 +18,8 @@ export const WithPlaceholder: Story = {
     label: "Имя пользователя",
     message: "Подсказка под инпутом",
     placeholder: "Выберете тип",
+    isOpen: true,
+
   },
 };
 
