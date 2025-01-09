@@ -11,6 +11,11 @@ interface TextInputProps {
   messageErrors?: string;
   isOpen?: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  value: string;
+  items: {
+    label: string;
+    value: string;
+  }[];
 }
 
 const SelectInput = ({
@@ -21,12 +26,18 @@ const SelectInput = ({
   messageErrors,
   isOpen,
   setIsOpen,
+  value,
+  items
 }: TextInputProps) => {
+  const active = items.find((item) => {
+    return value === item.value
+  })
   return (
+
     <div>
       <Label text={label} />
       <Wrapper onClick={() => setIsOpen(!isOpen)}>
-        <Input placeholder={placeholder} $isErrors={isErrors} readOnly />
+        <Input placeholder={placeholder} $isErrors={isErrors} readOnly value={active?.label} />
         <ImgIcon src={icon.src} $isOpen={isOpen} />
       </Wrapper>
       <Message text={message} messageErrors={messageErrors} />

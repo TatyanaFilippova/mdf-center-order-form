@@ -32,6 +32,6 @@ export const WithPlaceholder: Story = {
     label: "Имя пользователя",
     message: "Подсказка под инпутом",
     placeholder: "Выберете тип",
-    value: "2",
+    value: "3",
   },
 };

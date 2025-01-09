@@ -19,7 +19,15 @@ const Select = ({ items, placeholder, label, message, value }: SelectProps) => {
   return (
     <Wrapper>
       {isOpen && <SelectOptions items={items} value={value} />}
-      <SelectInput placeholder={placeholder} label={label} message={message} setIsOpen={setIsOpen} isOpen={isOpen} />
+      <SelectInput
+        placeholder={placeholder}
+        label={label}
+        message={message}
+        setIsOpen={setIsOpen}
+        isOpen={isOpen}
+        items={items}
+        value={value}
+      />
     </Wrapper>
   );
 };
