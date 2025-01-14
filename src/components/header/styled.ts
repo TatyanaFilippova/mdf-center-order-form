@@ -28,15 +28,13 @@ export const Wrapper = styled.div`
   padding-right: 24px;
 `;
 
-
-
 export const HeaderBottom = styled.div`
   height: 40px;
   display: flex;
   font-size: 11px;
   color: #3a3a3a;
   align-items: center;
-  margin-bottom: 94px;
+
   background-color: white;
   padding-left: 24px;
 `;

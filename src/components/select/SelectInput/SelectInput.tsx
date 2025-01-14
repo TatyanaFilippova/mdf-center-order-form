@@ -1,6 +1,6 @@
 import Label from "../../label/Label";
 import Message from "../../message/Message";
-import { ImgIcon, Input, Wrapper } from "./styled";
+import { ImgIcon, Input, Shell, Wrapper } from "./styled";
 import icon from "../assets/Vector.svg";
 
 interface TextInputProps {
@@ -34,14 +34,14 @@ const SelectInput = ({
   })
   return (
 
-    <div>
+    <Shell>
       <Label text={label} />
       <Wrapper onClick={() => setIsOpen(!isOpen)}>
         <Input placeholder={placeholder} $isErrors={isErrors} readOnly value={active?.label} />
         <ImgIcon src={icon.src} $isOpen={isOpen} />
       </Wrapper>
       <Message text={message} messageErrors={messageErrors} />
-    </div>
+    </Shell>
   );
 };
 

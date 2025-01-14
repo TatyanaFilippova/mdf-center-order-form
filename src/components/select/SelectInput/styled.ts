@@ -10,7 +10,7 @@ export const Input = styled.input<InputProps>`
   font-size: 16px;
   padding: 12px 8px 12px 8px;
   cursor: pointer;
- 
+  width: 100%;
 
   &::placeholder {
     color: black;
@@ -35,8 +35,9 @@ export const Input = styled.input<InputProps>`
 `;
 
 export const ImgIcon = styled.img<InputProps>`
-  width: 16px;
-  height: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;  
 
   ${(props) =>
     props.$isOpen &&
@@ -48,8 +49,12 @@ export const ImgIcon = styled.img<InputProps>`
 export const Wrapper = styled.div<InputProps>`
   display: flex;
   align-items: center;
-  width: 290px;
+  width: 100%;
   border-bottom: 2px solid #9d9a9a;
   justify-content: space-between;
   padding-right: 8px;
+`;
+
+export const Shell = styled.div`
+  width: 100%;
 `;

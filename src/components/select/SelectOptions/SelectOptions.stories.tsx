@@ -30,5 +30,11 @@ export const WithPlaceholder: Story = {
       },
     ],
     value: "1",
+    onChange() {
+      
+    },
+    setIsVisible() {
+      
+    },
   },
 };

@@ -1,6 +1,6 @@
 import Label from "../label/Label";
 import Message from "../message/Message";
-import { Input } from "./styled";
+import { Input, Wrapper } from "./styled";
 
 interface TextInputProps {
   placeholder?: string;
@@ -18,11 +18,11 @@ const TextInput = ({
   messageErrors,
 }: TextInputProps) => {
   return (
-    <div>
+    <Wrapper>
       <Label text={label} />
       <Input placeholder={placeholder} $isErrors={isErrors} />
       <Message text={message} messageErrors={messageErrors} />
-    </div>
+    </Wrapper>
   );
 };
 

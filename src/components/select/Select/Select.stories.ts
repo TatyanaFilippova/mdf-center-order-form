@@ -33,5 +33,8 @@ export const WithPlaceholder: Story = {
     message: "Подсказка под инпутом",
     placeholder: "Выберете тип",
     value: "3",
+    onChange() {
+      
+    },
   },
 };
